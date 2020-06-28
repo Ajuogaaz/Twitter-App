@@ -27,7 +27,7 @@ public class TimelineActivity extends AppCompatActivity {
 
 
         //Find the Recycle View
-        rvTweets
+        rvTweets = findViewById(R.id.rvTweets);
         //Innitialize the list of tweets and adapter
         //Recycler view setup: layout manager and the adapter
 
