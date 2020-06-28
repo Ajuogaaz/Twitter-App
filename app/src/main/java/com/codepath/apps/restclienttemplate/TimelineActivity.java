@@ -34,6 +34,7 @@ public class TimelineActivity extends AppCompatActivity {
     TweetsAdapter adapter;
     SwipeRefreshLayout swipeContainer;
     EndlessRecycleViewScrollListener scrollListener;
+    public final int REQUEST_CODE= 20;
 
 
 
@@ -106,7 +107,7 @@ public class TimelineActivity extends AppCompatActivity {
             Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
 
 
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CODE);
         }
 
 
