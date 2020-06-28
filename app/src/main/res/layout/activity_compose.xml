@@ -9,16 +9,6 @@
 
 
 
-
-
-    <com.google.android.material.textfield.activity_composed
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:counterEnabled="true"
-    app:counterMaxLength="10"
-    app:counterTextAppearance="@style/counterText"
-    app:counterOverflowTextAppearance="@style/counterOverride">
-
     <MultiAutoCompleteTextView
         android:id="@+id/etCompose"
         android:layout_width="wrap_content"
@@ -33,7 +23,6 @@
         android:hint="@string/enter"
         android:minLines="5" />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnTweet"
