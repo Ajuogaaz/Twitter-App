@@ -12,6 +12,7 @@ import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Adapter;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -20,6 +21,7 @@ import com.github.scribejava.apis.TwitterApi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,7 +121,13 @@ public class TimelineActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
             //Get data from the intent (tweet)
+            Tweet recentTweet = Parcels.unwrap(data.getParcelableExtra("tweet"));
             //Update the RV with the tweet
+            //Modify data set to contain tweet
+            tweets.add(0, recentTweet);
+            // then notify adapter
+            adapter.notifyItemInserted(0);
+
         }
 
         super.onActivityResult(requestCode, resultCode, data);
