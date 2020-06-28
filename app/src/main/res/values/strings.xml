@@ -7,5 +7,7 @@
     <string name="intent_host">cprest</string>
     <string name="enter">What\'s happening</string>
     <string name="postTweet">Tweet</string>
+    <string name="noEmptyTweet">Sorry your tweet cannot be empty</string>
+    <string name="tweetTooLong">Tweet content cannot exceed 140 characters</string>
 
 </resources>
