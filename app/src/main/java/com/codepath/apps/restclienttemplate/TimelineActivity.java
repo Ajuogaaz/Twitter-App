@@ -95,6 +95,19 @@ public class TimelineActivity extends AppCompatActivity {
 
                 Log.i(TAG, "onSuccess for load more dATA" + json.toString());
 
+                //  --> Deserialize and construct new model objects from the API response
+                JSONArray jsonArray = json.jsonArray;
+                try {
+                    //  --> Append the new data objects to the existing set of items inside the array of items
+                    //  --> Notify the adapter of the new items made with `notifyItemRangeInserted()`
+                    List<Tweet> extraTweets = Tweet.fromJsonArray(jsonArray);
+                    adapter.addAll(extraTweets);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             }
 
             @Override
@@ -105,9 +118,7 @@ public class TimelineActivity extends AppCompatActivity {
             }
         }, tweets.get(tweets.size() - 1).id );
 
-        //  --> Deserialize and construct new model objects from the API response
-        //  --> Append the new data objects to the existing set of items inside the array of items
-        //  --> Notify the adapter of the new items made with `notifyItemRangeInserted()`
+
     }
 
     private void populateHomeTimeline() {
