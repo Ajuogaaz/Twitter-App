@@ -8,9 +8,9 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-[x]	User can **sign in to Twitter** using OAuth login
-[x]	User can **view tweets from their home timeline**
-  [x] User is displayed the username, name, and body for each tweet
+* [x]	User can **sign in to Twitter** using OAuth login
+* [x]	User can **view tweets from their home timeline**
+* [x] User is displayed the username, name, and body for each tweet
   * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
 * [ ] User can **compose and post a new tweet**
   * [ ] User can click a “Compose” icon in the Action Bar on the top right
@@ -21,7 +21,7 @@ The following **required** functionality is completed:
 The following **stretch** features are implemented:
 
 * [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
-* [ ] User can **pull down to refresh tweets timeline**
+* [x] User can **pull down to refresh tweets timeline**
 * [ ] User is using **"Twitter branded" colors and styles**
 * [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 * [ ] User can **select "reply" from detail view to respond to a tweet**
@@ -32,7 +32,7 @@ The following **stretch** features are implemented:
 
 The following **bonus** features are implemented:
 
-* [ ] User can view more tweets as they scroll with infinite pagination
+* [x] User can view more tweets as they scroll with infinite pagination
 * [ ] Compose tweet functionality is build using modal overlay
 * [ ] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
 * [ ] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.org/android/Using-Parceler).
