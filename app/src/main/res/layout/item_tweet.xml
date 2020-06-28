@@ -26,6 +26,15 @@
         tools:text="This is screen Name" />
 
     <TextView
+        android:id="@+id/tvdateStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        tools:text="9 h" />
+
+    <TextView
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,4 +43,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         tools:text="i am the body" />
+
+
 </RelativeLayout>
