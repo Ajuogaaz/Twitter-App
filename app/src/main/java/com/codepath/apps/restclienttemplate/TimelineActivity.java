@@ -43,7 +43,7 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 Log.i(TAG, "fetching new data");
-
+                populateHomeTimeline();
             }
         });
 
@@ -69,8 +69,9 @@ public class TimelineActivity extends AppCompatActivity {
                 Log.i(TAG, "onSuccess!" + json.toString());
                 JSONArray jsonArray = json.jsonArray;
                 try {
-                    tweets.addAll(Tweet.fromJsonArray(jsonArray));
-                    adapter.notifyDataSetChanged();
+                    adapter.clear();
+                    adapter.addAll(Tweet.fromJsonArray(jsonArray));
+                    swipeContainer.setRefreshing(false);
                 } catch (JSONException e) {
                     Log.e(TAG, "JsonException", e);
                     e.printStackTrace();
