@@ -8,6 +8,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -30,6 +33,8 @@ public class TimelineActivity extends AppCompatActivity {
     TweetsAdapter adapter;
     SwipeRefreshLayout swipeContainer;
     EndlessRecycleViewScrollListener scrollListener;
+
+
 
 
     @Override
@@ -83,6 +88,22 @@ public class TimelineActivity extends AppCompatActivity {
         populateHomeTimeline();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.compose){
+            Toast.makeText(this, "Compose!", Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
 
     // Append the next page of data into the adapter
     // This method probably sends out a network request and appends new data items to your adapter.
