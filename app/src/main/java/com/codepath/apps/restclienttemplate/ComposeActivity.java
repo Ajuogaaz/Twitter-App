@@ -2,7 +2,9 @@ package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +67,11 @@ public class ComposeActivity extends AppCompatActivity {
                         try {
                             Tweet tweet = Tweet.fromJson(json.jsonObject);
                             Log.i(TAG, "Published tweet says" + tweet);
+
+                            Intent intent = new Intent();
+                            intent.putExtra("tweet", (Parcelable) tweet);
+                            setResult(RESULT_OK, intent);
+                            finish();
 
                         } catch (JSONException e) {
                             e.printStackTrace();

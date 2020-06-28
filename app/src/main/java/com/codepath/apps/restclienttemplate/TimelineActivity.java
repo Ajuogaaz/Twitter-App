@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -112,6 +113,16 @@ public class TimelineActivity extends AppCompatActivity {
 
 
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+            //Get data from the intent (tweet)
+            //Update the RV with the tweet
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     // Append the next page of data into the adapter
