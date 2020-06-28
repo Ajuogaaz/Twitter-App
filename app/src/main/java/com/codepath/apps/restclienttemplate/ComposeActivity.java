@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class ComposeActivity extends AppCompatActivity {
 
+    public static  final int MAX_TWEET_LENGTH = 140;
     EditText etCompose;
     Button btnTweet;
 
@@ -35,7 +36,7 @@ public class ComposeActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(s.length() > 140){
+                if(s.length() > MAX_TWEET_LENGTH){
                     Toast.makeText(ComposeActivity.this,
                             R.string.tweetTooLong,
                             Toast.LENGTH_SHORT).show();
