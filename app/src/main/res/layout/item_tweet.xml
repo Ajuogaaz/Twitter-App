@@ -26,7 +26,7 @@
         tools:text="This is screen Name" />
 
     <TextView
-        android:id="@+id/tvdateStamp"
+        android:id="@+id/createdAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"

@@ -71,6 +71,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         ImageView ivProfileImage;
         TextView tvBody;
         TextView tvScreenName;
+        TextView createdAt;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,6 +79,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            createdAt = itemView.findViewById(R.id.createdAt);
 
 
 
