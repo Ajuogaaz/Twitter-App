@@ -1,0 +1,61 @@
+Index: app/src/main/java/com/codepath/apps/restclienttemplate/models/Tweet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/codepath/apps/restclienttemplate/models/Tweet.java	(revision 0bc17eb5eda6fa0d9f47cf5363f5272f87b89ec2)
++++ app/src/main/java/com/codepath/apps/restclienttemplate/models/Tweet.java	(date 1593438368000)
+@@ -2,6 +2,9 @@
+ 
+ import android.text.format.DateUtils;
+ 
++import androidx.recyclerview.widget.RecyclerView;
++import androidx.room.Entity;
++
+ import org.json.JSONArray;
+ import org.json.JSONException;
+ import org.json.JSONObject;
+@@ -14,6 +17,7 @@
+ import java.util.Locale;
+ 
+ @Parcel
++@Entity
+ public class Tweet {
+ 
+     public String body;
+Index: app/src/main/java/com/codepath/apps/restclienttemplate/models/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/codepath/apps/restclienttemplate/models/User.java	(revision 0bc17eb5eda6fa0d9f47cf5363f5272f87b89ec2)
++++ app/src/main/java/com/codepath/apps/restclienttemplate/models/User.java	(date 1593438368000)
+@@ -1,10 +1,13 @@
+ package com.codepath.apps.restclienttemplate.models;
+ 
++import androidx.room.Entity;
++
+ import org.json.JSONException;
+ import org.json.JSONObject;
+ import org.parceler.Parcel;
+ 
+ @Parcel
++@Entity
+ public class User {
+ 
+     public String name;
+Index: app/src/main/java/com/codepath/apps/restclienttemplate/TimelineActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/codepath/apps/restclienttemplate/TimelineActivity.java	(revision 0bc17eb5eda6fa0d9f47cf5363f5272f87b89ec2)
++++ app/src/main/java/com/codepath/apps/restclienttemplate/TimelineActivity.java	(date 1593383832000)
+@@ -127,6 +127,7 @@
+             tweets.add(0, recentTweet);
+             // then notify adapter
+             adapter.notifyItemInserted(0);
++            rvTweets.smoothScrollToPosition(0);
+ 
+         }
+ 
