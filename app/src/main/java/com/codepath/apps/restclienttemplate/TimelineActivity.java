@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.util.Log;
@@ -16,6 +17,8 @@ import android.widget.Adapter;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.models.TweetDao;
+import com.codepath.apps.restclienttemplate.models.TweetWithUser;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.github.scribejava.apis.TwitterApi;
 
@@ -38,6 +41,7 @@ public class TimelineActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeContainer;
     EndlessRecycleViewScrollListener scrollListener;
     public final int REQUEST_CODE= 20;
+    TweetDao tweetDao;
 
 
 
@@ -48,6 +52,8 @@ public class TimelineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timeline);
 
         client = TwitterApp.getRestClient(this);
+
+        tweetDao = ((TwitterApp) getApplicationContext()).getMyDatabase().tweetDao();
         
 
         swipeContainer = findViewById(R.id.swipeContainer);
@@ -88,6 +94,17 @@ public class TimelineActivity extends AppCompatActivity {
         
         //Add scroll listener to the recycle View
         rvTweets.addOnScrollListener(scrollListener);
+
+        //Querry for the existing tweets in the app
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                Log.i(TAG, "Showing data from database");
+                List<TweetWithUser>tweetWithUsers = tweetDao.recentItems();
+                tweetsFromDb = TweetWithUser.getTweetList(tweetWithUsers)
+                Adapter.addAll(tweetsFromDb);
+            }
+        });
         
         
         populateHomeTimeline();

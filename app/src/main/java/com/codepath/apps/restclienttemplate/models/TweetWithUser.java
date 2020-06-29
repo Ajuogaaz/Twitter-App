@@ -2,6 +2,9 @@ package com.codepath.apps.restclienttemplate.models;
 
 import androidx.room.Embedded;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TweetWithUser {
 
     /*
@@ -16,4 +19,17 @@ public class TweetWithUser {
     Tweet tweet;
 
 
+    public static Object getTweetList(List<TweetWithUser> tweetWithUsers) {
+
+        List<Tweet>tweets = new ArrayList<>();
+        //We are seeking the specific tweets abd reconstructing them with the users inside them
+        for (int i = 0; i < tweetWithUsers.size(); i++){
+            Tweet tweet = tweetWithUsers.get(i).tweet;
+
+            tweet.user = tweetWithUsers.get(i).user;
+
+            tweets.add(tweet);
+        }
+        return tweets;
+    }
 }
