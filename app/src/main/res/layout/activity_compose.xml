@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComposeActivity">
+    tools:context=".ComposeActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#FFFFFF"
+        android:layout_margin="20dp"
+        android:textColor="@color/AntiqueWhite"
+        android:layout_gravity="right"
+        android:paddingEnd="25dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_vertical_margin"
+        android:requiresFadingEdge="horizontal|vertical|none"
+        android:shadowDx="@dimen/activity_vertical_margin"
+        android:shadowDy="@dimen/activity_horizontal_margin"
+        android:text="@string/postTweet" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         app:counterMaxLength="280"
 >
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:gravity="top"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="What's happening" />
+            android:gravity="top"
+            android:hint="@string/what_s_happening"
+            android:inputType="textLongMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -41,15 +61,6 @@
         android:minLines="5" />-->
 
 
-    <Button
-        android:id="@+id/btnTweet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etCompose"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="@string/postTweet" />
-</RelativeLayout>
+</LinearLayout>
 
 

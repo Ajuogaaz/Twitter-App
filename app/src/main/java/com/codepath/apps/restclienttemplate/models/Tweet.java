@@ -80,6 +80,9 @@ public class Tweet {
             e.printStackTrace();
         }
         relativeDate = relativeDate.replace(" minutes ago", "m");
+        relativeDate = relativeDate.replace(" hours ago", "h");
+        relativeDate = relativeDate.replace(" minute ago", "m");
+        relativeDate = relativeDate.replace(" hour ago", "h");
 
         return relativeDate;
     }
