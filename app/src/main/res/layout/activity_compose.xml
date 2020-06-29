@@ -7,9 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".ComposeActivity">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:counterMaxLength="280"
+>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:gravity="top"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:hint="What's happening" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <MultiAutoCompleteTextView
+   <!-- <MultiAutoCompleteTextView
         android:id="@+id/etCompose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +38,7 @@
         android:layout_marginEnd="5dp"
         android:ems="10"
         android:hint="@string/enter"
-        android:minLines="5" />
+        android:minLines="5" />-->
 
 
     <Button

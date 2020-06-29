@@ -79,6 +79,7 @@ public class Tweet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        relativeDate = relativeDate.replace(" minutes ago", "m");
 
         return relativeDate;
     }
