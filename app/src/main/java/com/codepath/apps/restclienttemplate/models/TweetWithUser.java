@@ -19,7 +19,7 @@ public class TweetWithUser {
     Tweet tweet;
 
 
-    public static Object getTweetList(List<TweetWithUser> tweetWithUsers) {
+    public static List<Tweet> getTweetList(List<TweetWithUser> tweetWithUsers) {
 
         List<Tweet>tweets = new ArrayList<>();
         //We are seeking the specific tweets abd reconstructing them with the users inside them

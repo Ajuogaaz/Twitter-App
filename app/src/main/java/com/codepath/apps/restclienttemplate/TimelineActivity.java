@@ -101,7 +101,8 @@ public class TimelineActivity extends AppCompatActivity {
             public void run() {
                 Log.i(TAG, "Showing data from database");
                 List<TweetWithUser>tweetWithUsers = tweetDao.recentItems();
-                tweetsFromDb = TweetWithUser.getTweetList(tweetWithUsers)
+                List<Tweet> tweetsFromDb = TweetWithUser.getTweetList(tweetWithUsers);
+
                 Adapter.addAll(tweetsFromDb);
             }
         });
