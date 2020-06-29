@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.apps.restclienttemplate.models.TweetDao;
 import com.codepath.apps.restclienttemplate.models.TweetWithUser;
+import com.codepath.apps.restclienttemplate.models.User;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.github.scribejava.apis.TwitterApi;
 
@@ -197,6 +198,8 @@ public class TimelineActivity extends AppCompatActivity {
                 Log.i(TAG, "onSuccess!" + json.toString());
                 JSONArray jsonArray = json.jsonArray;
                 try {
+
+                    final List<Tweet> tweetsFromNetwork = Tweet.fromJsonArray(jsonArray);
                     adapter.clear();
                     adapter.addAll(Tweet.fromJsonArray(jsonArray));
                     swipeContainer.setRefreshing(false);
@@ -204,7 +207,13 @@ public class TimelineActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Log.i(TAG, "Saving data into the database");
-                            TweetDao.insertModel();
+
+                            List<User>usersFromNetwork = User.fromJsonTweetArray(tweetsFromNetwork);
+
+                            //Insert users first
+                            tweetDao.insertModel(usersFromNetwork.toArray(new User[0]));
+                            //Insert Tweets next
+                            tweetDao.insertModel(tweetsFromNetwork.toArray(new Tweet[0]));
 
                         }
                     });
