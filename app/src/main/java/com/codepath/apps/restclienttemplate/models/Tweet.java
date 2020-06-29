@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Parcel
-@Entity(foreignKeys = @ForeignKey(entity=User.class, parentColumns = "id", childColumns = "userid"))
+@Entity(foreignKeys = @ForeignKey(entity=User.class, parentColumns = "id", childColumns = "userId"))
 public class Tweet {
 
     @ColumnInfo

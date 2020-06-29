@@ -102,8 +102,8 @@ public class TimelineActivity extends AppCompatActivity {
                 Log.i(TAG, "Showing data from database");
                 List<TweetWithUser>tweetWithUsers = tweetDao.recentItems();
                 List<Tweet> tweetsFromDb = TweetWithUser.getTweetList(tweetWithUsers);
-
-                Adapter.addAll(tweetsFromDb);
+                adapter.clear();
+                adapter.addAll(tweetsFromDb);
             }
         });
         
@@ -200,6 +200,15 @@ public class TimelineActivity extends AppCompatActivity {
                     adapter.clear();
                     adapter.addAll(Tweet.fromJsonArray(jsonArray));
                     swipeContainer.setRefreshing(false);
+                    AsyncTask.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.i(TAG, "Saving data into the database");
+                            TweetDao.insertModel();
+
+                        }
+                    });
+
                 } catch (JSONException e) {
                     Log.e(TAG, "JsonException", e);
                     e.printStackTrace();
