@@ -8,34 +8,31 @@
     tools:context=".ComposeActivity"
     android:orientation="vertical">
 
+
     <Button
         android:id="@+id/btnTweet"
+        style="@style/NiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:backgroundTint="#FFFFFF"
+        android:text="@string/postTweet"
         android:layout_margin="20dp"
-        android:textColor="@color/AntiqueWhite"
         android:layout_gravity="right"
         android:paddingEnd="25dp"
         android:padding="@dimen/activity_horizontal_margin"
         android:paddingStart="@dimen/activity_vertical_margin"
         android:requiresFadingEdge="horizontal|vertical|none"
-        android:shadowDx="@dimen/activity_vertical_margin"
-        android:shadowDy="@dimen/activity_horizontal_margin"
-        android:text="@string/postTweet" />
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
-        app:counterMaxLength="280"
->
+        app:counterMaxLength="280">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="200dp"
+            android:id="@+id/etCompose"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:autofillHints=""
