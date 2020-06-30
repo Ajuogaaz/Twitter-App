@@ -7,9 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".TimelineActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/twitterblue"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+
+        app:titleTextColor="@android:color/white">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="0dp"
+            android:layout_marginStart="150dp"
+            android:contentDescription="@string/tltl"
+            app:srcCompat="@drawable/ic_launcher_twitter_round" />
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_below="@id/toolbar"
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,8 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true" />
+
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
