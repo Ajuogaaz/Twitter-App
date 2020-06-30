@@ -44,6 +44,8 @@ The following **bonus** features are implemented:
 
 
 The following **additional** features are implemented:
+* [x] Replaced the Actionbar menu item with a customized toolbar
+
 
 [ ] List anything else that you can get done to improve the app functionality!
 
