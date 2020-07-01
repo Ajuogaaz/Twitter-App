@@ -83,6 +83,7 @@ public class Tweet {
         relativeDate = relativeDate.replace(" hours ago", "h");
         relativeDate = relativeDate.replace(" minute ago", "m");
         relativeDate = relativeDate.replace(" hour ago", "h");
+        relativeDate = relativeDate.replace(" seconds ago", "s");
 
         return relativeDate;
     }
