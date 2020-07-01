@@ -37,6 +37,12 @@ public class Tweet {
     @ColumnInfo
     public long userId;
 
+    @ColumnInfo
+    public String media_url;
+
+    @ColumnInfo
+    public boolean hasMedia_url;
+
     @Ignore
     public User user;
 
