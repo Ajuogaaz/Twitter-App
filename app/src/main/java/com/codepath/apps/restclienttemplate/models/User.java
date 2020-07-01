@@ -29,6 +29,8 @@ public class User {
     public String profileImageUrl;
 
 
+
+
     public User(){};
 
     public static User fromJson(JSONObject jsonObject) throws JSONException {
