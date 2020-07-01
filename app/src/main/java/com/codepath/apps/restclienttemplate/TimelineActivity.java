@@ -54,26 +54,25 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // We add the binder method
         ActivityTimelineBinding binding = ActivityTimelineBinding.inflate(getLayoutInflater());
 
         View view = binding.getRoot();
         setContentView(view);
 
-        setContentView(R.layout.activity_timeline);
+        //setContentView(R.layout.activity_timeline);
 
         client = TwitterApp.getRestClient(this);
-
-
 
         tweetDao = ((TwitterApp) getApplicationContext()).getMyDatabase().tweetDao();
 
 
         // Find the toolbar view inside the activity layout
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
         
 
         swipeContainer = findViewById(R.id.swipeContainer);
@@ -91,7 +90,7 @@ public class TimelineActivity extends AppCompatActivity {
         });
 
         //Find the Recycle View
-        rvTweets = findViewById(R.id.rvTweets);
+        //rvTweets = findViewById(R.id.rvTweets);
 
         //Innitialize the list of tweets and adapter
         tweets = new ArrayList<>();
@@ -101,8 +100,8 @@ public class TimelineActivity extends AppCompatActivity {
 
         LinearLayoutManager layoutManager= new LinearLayoutManager(this);
 
-        rvTweets.setLayoutManager(layoutManager);
-        rvTweets.setAdapter(adapter);
+        binding.rvTweets.setLayoutManager(layoutManager);
+        binding.rvTweets.setAdapter(adapter);
 
         scrollListener = new EndlessRecycleViewScrollListener(layoutManager) {
             @Override
@@ -113,7 +112,7 @@ public class TimelineActivity extends AppCompatActivity {
         };
         
         //Add scroll listener to the recycle View
-        rvTweets.addOnScrollListener(scrollListener);
+        binding.rvTweets.addOnScrollListener(scrollListener);
 
         //Querry for the existing tweets in the app
         AsyncTask.execute(new Runnable() {
