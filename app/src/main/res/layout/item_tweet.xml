@@ -6,22 +6,30 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
-    <ImageView
-        android:id="@+id/ivProfileImage"
-        style="@style/NiceButton"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/circularContainer"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/ivProfileImage"
+        android:layout_toEndOf="@id/circularContainer"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         tools:text="This is screen Name" />
@@ -39,7 +47,7 @@
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/ivProfileImage"
+        android:layout_toEndOf="@id/circularContainer"
         android:layout_below="@id/tvScreenName"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
