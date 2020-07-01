@@ -8,6 +8,7 @@
 
     <ImageView
         android:id="@+id/ivProfileImage"
+        style="@style/NiceButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -43,6 +44,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         tools:text="i am the body" />
+
+
 
 
 </RelativeLayout>
