@@ -17,6 +17,10 @@ import java.util.List;
 
 public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolder>{
 
+    public interface onClickListener{
+        void onItemClicked(int position);
+    }
+
     Context context;
     List<Tweet> tweets;
 
