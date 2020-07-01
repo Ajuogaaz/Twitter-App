@@ -15,7 +15,7 @@
         android:theme="@style/AppBaseTheme">
         <activity android:name=".ComposeActivity"></activity>
         <activity android:name=".TimelineActivity"
-            android:label="   "
+            android:label=""
             />
         <activity
             android:name=".LoginActivity"
