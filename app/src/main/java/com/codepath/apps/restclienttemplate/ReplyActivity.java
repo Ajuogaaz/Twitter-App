@@ -22,7 +22,7 @@ import org.parceler.Parcels;
 import okhttp3.Headers;
 
 
-public class ComposeActivity extends AppCompatActivity {
+public class ReplyActivity extends AppCompatActivity {
 
 
     public static  final int MAX_TWEET_LENGTH = 140;
@@ -60,18 +60,18 @@ public class ComposeActivity extends AppCompatActivity {
                 String tweetContent = etCompose.getText().toString();
 
                 if(tweetContent.isEmpty()){
-                    Toast.makeText(ComposeActivity.this,
+                    Toast.makeText(ReplyActivity.this,
                             R.string.noEmptyTweet,
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(tweetContent.length() > MAX_TWEET_LENGTH){
-                    Toast.makeText(ComposeActivity.this,
+                    Toast.makeText(ReplyActivity.this,
                             R.string.tweetTooLong,
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReplyActivity.this, tweetContent, Toast.LENGTH_SHORT).show();
 
                 client.publishTweet(tweetContent, new JsonHttpResponseHandler() {
                     @Override
