@@ -57,7 +57,7 @@ public class Tweet {
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.id = jsonObject.getLong("id");
         tweet.userId = tweet.user.id;
-        tweet.media_url = getInsideData(jsonObject.getJSONObject("extended_entities"));
+        tweet.media_url = getInsideData(jsonObject.getJSONObject("entities"));
         if(tweet.media_url == ""){
             tweet.hasMedia_url = false;
         }else{
@@ -67,16 +67,18 @@ public class Tweet {
     }
 
     //This a method to extract the url form the api
-    private static String getInsideData(JSONObject extended_entities) throws JSONException {
+    private static String getInsideData(JSONObject entities) throws JSONException {
 
-        JSONArray media = extended_entities.getJSONArray("media");
-        if (media.length() == 0){
+        if (entities.has("media")){
+            JSONObject media  = entities.getJSONArray("media").getJSONObject(0);
+
+            return media.getString("media_url_https");
+
+        }else{
+
             return "";
         }
-        else{
-            return media.getJSONObject(0).getString("media_url");
 
-        }
     }
 
     public static List<Tweet> fromJsonArray(JSONArray jsonArray) throws JSONException {
