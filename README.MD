@@ -45,6 +45,7 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 * [x] Replaced the Actionbar menu item with a customized toolbar
+* [x] Users tweets are showed in round images just like the twitter app
 
 
 [ ] List anything else that you can get done to improve the app functionality!
