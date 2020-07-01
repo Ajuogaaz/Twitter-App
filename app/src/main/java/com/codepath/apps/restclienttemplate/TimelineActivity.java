@@ -103,6 +103,7 @@ public class TimelineActivity extends AppCompatActivity {
         binding.rvTweets.setLayoutManager(layoutManager);
         binding.rvTweets.setAdapter(adapter);
 
+
         scrollListener = new EndlessRecycleViewScrollListener(layoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
