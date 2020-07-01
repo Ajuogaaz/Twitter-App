@@ -13,10 +13,11 @@
         android:icon="@drawable/ic_launcher_twitter_round"
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".ComposeActivity"></activity>
-        <activity android:name=".TimelineActivity"
-            android:label=""
-            />
+        <activity android:name=".models.ReplyActivity"></activity>
+        <activity android:name=".ComposeActivity" />
+        <activity
+            android:name=".TimelineActivity"
+            android:label="" />
         <activity
             android:name=".LoginActivity"
             android:label=""
