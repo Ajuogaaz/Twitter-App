@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.codepath.apps.restclienttemplate.R;
+
 public class ReplyActivity extends AppCompatActivity {
 
     @Override
