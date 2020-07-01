@@ -92,7 +92,7 @@ public class TimelineActivity extends AppCompatActivity {
         //Find the Recycle View
         //rvTweets = findViewById(R.id.rvTweets);
 
-        //Innitialize the list of tweets and adapter
+        //Initialize the list of tweets and adapter
         tweets = new ArrayList<>();
         adapter = new TweetsAdapter(this, tweets);
 
@@ -114,7 +114,7 @@ public class TimelineActivity extends AppCompatActivity {
         //Add scroll listener to the recycle View
         binding.rvTweets.addOnScrollListener(scrollListener);
 
-        //Querry for the existing tweets in the app
+        //Query for the existing tweets in the app
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
