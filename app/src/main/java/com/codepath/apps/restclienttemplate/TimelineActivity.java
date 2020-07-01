@@ -12,11 +12,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.Toast;
 
+import com.codepath.apps.restclienttemplate.databinding.ActivityTimelineBinding;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.apps.restclienttemplate.models.TweetDao;
 import com.codepath.apps.restclienttemplate.models.TweetWithUser;
@@ -51,9 +54,17 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActivityTimelineBinding binding = ActivityTimelineBinding.inflate(getLayoutInflater());
+
+        View view = binding.getRoot();
+        setContentView(view);
+
         setContentView(R.layout.activity_timeline);
 
         client = TwitterApp.getRestClient(this);
+
+
 
         tweetDao = ((TwitterApp) getApplicationContext()).getMyDatabase().tweetDao();
 
@@ -119,6 +130,7 @@ public class TimelineActivity extends AppCompatActivity {
         
         populateHomeTimeline();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
