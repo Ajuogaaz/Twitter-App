@@ -6,6 +6,11 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ContainerTweet">
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/circularContainer"
@@ -54,6 +59,26 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         tools:text="i am the body" />
+
+        <ImageView
+            android:id="@+id/tweetPicture"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/circularContainer"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/tvBody"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/ContainerTweet">
+
+
+   </RelativeLayout>
 
 
 
