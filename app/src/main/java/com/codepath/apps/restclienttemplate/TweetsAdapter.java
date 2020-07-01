@@ -92,6 +92,10 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             createdAt.setText(tweet.createdAt);
 
             Glide.with(context)
+                    .load(tweet.media_url)
+                    .into(tweetMedia);
+
+            Glide.with(context)
                     .load(tweet.user.profileImageUrl)
                     .into(ivProfileImage);
 
