@@ -114,9 +114,11 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
             if (tweet.hasMedia_url){
                 tweetMedia.setVisibility(View.VISIBLE);
+                imageContainer.setVisibility(View.VISIBLE);
 
             } else {
                 tweetMedia.setVisibility(View.GONE);
+                imageContainer.setVisibility(View.GONE);
             }
 
 
