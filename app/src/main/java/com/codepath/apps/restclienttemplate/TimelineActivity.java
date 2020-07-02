@@ -113,7 +113,12 @@ public class TimelineActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(TimelineActivity.this, DetailsActivity.class);
 
+                    Tweet tweet = tweets.get(position);
+
+                    intent.putExtra(Tweet.class.getSimpleName(), Parcels.wrap(tweet));
+
                     startActivity(intent);
+
 
                 }
 
