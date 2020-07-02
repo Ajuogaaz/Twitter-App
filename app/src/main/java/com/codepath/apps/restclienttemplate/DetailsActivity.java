@@ -42,7 +42,5 @@ public class DetailsActivity extends AppCompatActivity {
                 .into(binding.tweetPicture);
 
 
-
-
     }
 }
