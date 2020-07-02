@@ -39,6 +39,9 @@ public class DetailsActivity extends AppCompatActivity {
         binding.numberOfActualLikes.setText(tweet.likeCount);
         binding.numberOfActualRetweets.setText(tweet.retweetCount);
 
+
+
+
         Glide.with(this)
                 .load(tweet.media_url)
                 .into(binding.tweetPicture);

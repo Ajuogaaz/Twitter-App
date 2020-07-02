@@ -29,6 +29,8 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
     onClickListener clickListener;
     public static final int REPLY_CODE = 100;
     public static final int DETAILS_CODE = 200;
+    public static final int RETWEET_CODE = 300;
+    public static final int LIKE_CODE = 400;
 
     // Pass in context and list of tweets
 
@@ -118,7 +120,20 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
 
             retweetCount.setText(tweet.retweetCount);
+            retweetCount.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), RETWEET_CODE);
+                }
+            });
+
             likeCount.setText(tweet.likeCount);
+            likeCount.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
+                }
+            });
 
             tvScreenName.setText(tweet.user.name);
             tvScreenName.setOnClickListener(new View.OnClickListener() {
