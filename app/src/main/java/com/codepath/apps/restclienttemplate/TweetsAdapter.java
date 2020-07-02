@@ -98,8 +98,12 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             tvScreenName.setText(tweet.user.screenName);
             createdAt.setText(tweet.createdAt);
 
+            int radius = 30; //corner radius22
+            int margin = 10;
+
             Glide.with(context)
                     .load(tweet.media_url)
+                    .transform(new RoundedCornersTransformation(radius, margin))
                     .into(tweetMedia);
 
             Glide.with(context)
