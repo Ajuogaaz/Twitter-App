@@ -111,6 +111,10 @@ public class TimelineActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Show me Details",
                             Toast.LENGTH_SHORT).show();
 
+                    Intent intent = new Intent(TimelineActivity.this, DetailsActivity.class);
+
+                    startActivity(intent);
+
                 }
 
 
