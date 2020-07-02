@@ -145,7 +145,7 @@ public class TimelineActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Liked",
                             Toast.LENGTH_SHORT).show();
 
-                    client.retweetTweet(tweets.get(position).id, new JsonHttpResponseHandler() {
+                    client.likeThisTweet(tweets.get(position).id, new JsonHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Headers headers, JSON json) {
                             Log.i(TAG, "Onsuccess to like tweet");
