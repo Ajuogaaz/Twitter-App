@@ -66,8 +66,9 @@
 
         <ImageView
             android:id="@+id/tweetPicture"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:paddingTop="10dp"
+            android:layout_width="350dp"
+            android:layout_height="170dp"
             android:layout_below="@id/tvBody"
             android:scaleType="centerCrop"
             android:cropToPadding="true"
@@ -83,7 +84,8 @@
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_below="@id/ContainerTweet">
+       android:layout_below="@id/ContainerTweet"
+       android:paddingTop="10dp">
 
        <ImageView
        android:id="@+id/replyTweet"
