@@ -23,13 +23,14 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
     Context context;
     List<Tweet> tweets;
-
+    onClickListener clickListener;
 
     // Pass in context and list of tweets
 
-    public TweetsAdapter(Context context, List<Tweet> tweets) {
+    public TweetsAdapter(Context context, List<Tweet> tweets, onClickListener clickListener) {
         this.context = context;
         this.tweets = tweets;
+        this.clickListener = clickListener;
     }
 
     //for each row Inflate the layout
@@ -104,6 +105,14 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             Glide.with(context)
                     .load(tweet.user.profileImageUrl)
                     .into(ivProfileImage);
+
+            replyTweet.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition());
+
+                }
+            });
 
         }
     }
