@@ -85,7 +85,8 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         ImageView tweetMedia;
         ImageView replyTweet;
         CardView imageContainer;
-        Layout tweetContainer;
+        TextView retweetCount;
+        TextView likeCount;
 
 
         public ViewHolder(@NonNull View itemView) {
