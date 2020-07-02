@@ -126,6 +126,17 @@ public class TimelineActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Retweeted",
                             Toast.LENGTH_SHORT).show();
+
+                    client.retweetTweet(tweets.get(position).id, new JsonHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Headers headers, JSON json) {
+                            Log.i(TAG, "Onsuccess to retweet tweet");
+                        }
+                        @Override
+                        public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+                            Log.e(TAG, "onFailureretweet tweet", throwable);
+                        }
+                    });
                 }
 
                 if(replyCode == TweetsAdapter.LIKE_CODE) {
