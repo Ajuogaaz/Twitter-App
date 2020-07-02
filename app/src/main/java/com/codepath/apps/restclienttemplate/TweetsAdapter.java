@@ -106,6 +106,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             retweetCount = itemView.findViewById(R.id.numberOfRetweets);
             likeCount = itemView.findViewById(R.id.numberOfLikes);
             retweet = itemView.findViewById(R.id.reTweet);
+            like = itemView.findViewById(R.id.likeTweet);
 
 
 
