@@ -96,7 +96,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             tweetMedia = itemView.findViewById(R.id.tweetPicture);
             replyTweet = itemView.findViewById(R.id.replyTweet);
             imageContainer = itemView.findViewById(R.id.roundedContainer);
-            tweetContainer = itemView.findViewById(R.id.ContainerTweet)
+
 
 
         }
