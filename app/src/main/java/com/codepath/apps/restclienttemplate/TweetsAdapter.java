@@ -108,8 +108,6 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             retweet = itemView.findViewById(R.id.reTweet);
             like = itemView.findViewById(R.id.likeTweet);
 
-
-
         }
 
         public void bind(Tweet tweet) {
@@ -124,7 +122,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
 
             retweetCount.setText(tweet.retweetCount);
-            retweetCount.setOnClickListener(new View.OnClickListener() {
+            retweet.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), RETWEET_CODE);
@@ -132,7 +130,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             });
 
             likeCount.setText(tweet.likeCount);
-            likeCount.setOnClickListener(new View.OnClickListener() {
+            like.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
