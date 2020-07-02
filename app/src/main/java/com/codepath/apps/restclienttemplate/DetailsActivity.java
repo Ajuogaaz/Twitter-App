@@ -41,6 +41,16 @@ public class DetailsActivity extends AppCompatActivity {
                 .load(tweet.media_url)
                 .into(binding.tweetPicture);
 
+        if (tweet.hasMedia_url){
+            binding.tweetPicture.setVisibility(View.VISIBLE);
+            binding.roundedContainer.setVisibility(View.VISIBLE);
+
+
+        } else {
+            binding.tweetPicture.setVisibility(View.GONE);
+            binding.roundedContainer.setVisibility(View.GONE);
+        }
+
 
     }
 }
