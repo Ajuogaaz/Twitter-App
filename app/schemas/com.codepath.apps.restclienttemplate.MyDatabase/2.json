@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "754e346953afed2b4257f0443ab8240d",
+    "identityHash": "154e7e912b0ef055d648593cd209b8f8",
     "entities": [
       {
         "tableName": "SampleModel",
@@ -32,7 +32,7 @@
       },
       {
         "tableName": "Tweet",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `body` TEXT, `retweetCount` TEXT, `likeCount` TEXT, `createdAt` TEXT, `userId` INTEGER NOT NULL, `media_url` TEXT, `hasMedia_url` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`userId`) REFERENCES `User`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `body` TEXT, `retweetCount` INTEGER NOT NULL, `likeCount` INTEGER NOT NULL, `createdAt` TEXT, `userId` INTEGER NOT NULL, `media_url` TEXT, `hasMedia_url` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`userId`) REFERENCES `User`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
         "fields": [
           {
             "fieldPath": "id",
@@ -49,14 +49,14 @@
           {
             "fieldPath": "retweetCount",
             "columnName": "retweetCount",
-            "affinity": "TEXT",
-            "notNull": false
+            "affinity": "INTEGER",
+            "notNull": true
           },
           {
             "fieldPath": "likeCount",
             "columnName": "likeCount",
-            "affinity": "TEXT",
-            "notNull": false
+            "affinity": "INTEGER",
+            "notNull": true
           },
           {
             "fieldPath": "createdAt",
@@ -146,7 +146,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '754e346953afed2b4257f0443ab8240d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '154e7e912b0ef055d648593cd209b8f8')"
     ]
   }
 }

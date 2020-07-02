@@ -133,7 +133,7 @@
            android:layout_marginStart="10dp"
            android:layout_marginTop="35dp"
            android:layout_toEndOf="@id/reTweet"
-           android:text="@string/_107" />
+           tools:text="@string/_107" />
 
        <ImageView
            android:id="@+id/likeTweet"
@@ -151,7 +151,8 @@
            android:layout_marginStart="10dp"
            android:layout_marginTop="15dp"
            android:layout_toEndOf="@id/likeTweet"
-           android:text="113" />
+           tools:text ="200"
+            />
 
        <ImageView
            android:id="@+id/shareTweet"
