@@ -32,6 +32,12 @@ public class Tweet {
     public String body;
 
     @ColumnInfo
+    public int retweetCount;
+
+    @ColumnInfo
+    public int likeCount;
+
+    @ColumnInfo
     public String createdAt;
 
     @ColumnInfo
@@ -57,6 +63,8 @@ public class Tweet {
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.id = jsonObject.getLong("id");
         tweet.userId = tweet.user.id;
+        tweet.retweetCount = jsonObject.getInt("retweet_count");
+        tweet.likeCount = jsonObject.getInt("favorite_count");
         tweet.media_url = getInsideData(jsonObject.getJSONObject("entities"));
         if(tweet.media_url == ""){
             tweet.hasMedia_url = false;
