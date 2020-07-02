@@ -84,6 +84,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         ImageView replyTweet;
         CardView imageContainer;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
