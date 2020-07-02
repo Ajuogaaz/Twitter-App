@@ -89,6 +89,8 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         CardView imageContainer;
         TextView retweetCount;
         TextView likeCount;
+        ImageView retweet;
+        ImageView like;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -103,6 +105,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             imageContainer = itemView.findViewById(R.id.roundedContainer);
             retweetCount = itemView.findViewById(R.id.numberOfRetweets);
             likeCount = itemView.findViewById(R.id.numberOfLikes);
+            retweet = itemView.findViewById(R.id.reTweet);
 
 
 
