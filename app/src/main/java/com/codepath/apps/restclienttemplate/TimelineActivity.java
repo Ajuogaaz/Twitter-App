@@ -106,6 +106,13 @@ public class TimelineActivity extends AppCompatActivity {
                     startActivityForResult(intent, REQUEST_CODE);
                 }
 
+                if(replyCode == TweetsAdapter.DETAILS_CODE){
+
+                    Toast.makeText(getApplicationContext(), "Show me Details",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+
 
             }
         };
