@@ -7,8 +7,13 @@ import android.view.View;
 
 import com.codepath.apps.restclienttemplate.databinding.ActivityDetailsBinding;
 import com.codepath.apps.restclienttemplate.databinding.ActivityTimelineBinding;
+import com.codepath.apps.restclienttemplate.models.Tweet;
+
+import org.parceler.Parcels;
 
 public class DetailsActivity extends AppCompatActivity {
+
+    Tweet tweet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,8 @@ public class DetailsActivity extends AppCompatActivity {
         View view = binding.getRoot();
 
         setContentView(view);
+
+        tweet = Parcels.unwrap(getIntent().getParcelableExtra(Tweet.class.getSimpleName()));
 
 
     }
