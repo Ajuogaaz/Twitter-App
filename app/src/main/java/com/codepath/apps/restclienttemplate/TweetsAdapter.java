@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +83,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         ImageView tweetMedia;
         ImageView replyTweet;
         CardView imageContainer;
+        Layout tweetContainer;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -94,6 +96,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             tweetMedia = itemView.findViewById(R.id.tweetPicture);
             replyTweet = itemView.findViewById(R.id.replyTweet);
             imageContainer = itemView.findViewById(R.id.roundedContainer);
+            tweetContainer = itemView.findViewById(R.id.ContainerTweet)
 
 
         }
@@ -129,6 +132,8 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                     clickListener.onItemClicked(getAdapterPosition(), REPLY_CODE);
                 }
             });
+
+
 
         }
     }
