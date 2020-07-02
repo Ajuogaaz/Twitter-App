@@ -35,14 +35,14 @@ public class ReplyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compose);
+        setContentView(R.layout.activity_reply);
 
         client = TwitterApp.getRestClient(this);
 
         etCompose = findViewById(R.id.etComposereply);
         btnTweet = findViewById(R.id.btnTweetreply);
 
-        etCompose.setText(getIntent().getStringExtra(TimelineActivity.KEY_USER_NAME));
+        etCompose.setText('@'+getIntent().getStringExtra(TimelineActivity.KEY_USER_NAME)+ "  ");
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);

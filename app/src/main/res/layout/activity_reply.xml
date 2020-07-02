@@ -41,6 +41,7 @@
             android:ems="10"
             android:gravity="top"
             android:hint="@string/what_s_happening"
+            android:textColor="@color/twitterblue"
             android:inputType="textLongMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
