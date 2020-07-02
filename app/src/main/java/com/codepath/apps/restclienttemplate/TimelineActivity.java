@@ -131,6 +131,7 @@ public class TimelineActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(int statusCode, Headers headers, JSON json) {
                             Log.i(TAG, "Onsuccess to retweet tweet");
+
                         }
                         @Override
                         public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
