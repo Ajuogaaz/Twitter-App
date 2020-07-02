@@ -105,12 +105,19 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
             Glide.with(context)
                     .load(tweet.media_url)
-
                     .into(tweetMedia);
 
             Glide.with(context)
                     .load(tweet.user.profileImageUrl)
                     .into(ivProfileImage);
+
+            if (tweet.hasMedia_url){
+                tweetMedia.setVisibility(View.VISIBLE);
+
+            } else {
+                tweetMedia.setVisibility(View.GONE);
+            }
+
 
             replyTweet.setOnClickListener(new View.OnClickListener() {
                 @Override
