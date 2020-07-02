@@ -125,6 +125,16 @@
            android:layout_toEndOf="@id/replyTweet"
            app:srcCompat="@drawable/ic_vector_retweet_stroke" />
 
+       <TextView
+           android:id="@+id/numberOfRetweets"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="35dp"
+           android:layout_toEndOf="@id/reTweet"
+           android:text="@string/_107" />
+
        <ImageView
            android:id="@+id/likeTweet"
            android:layout_width="20dp"
@@ -133,6 +143,15 @@
            android:layout_marginTop="5dp"
            android:layout_toEndOf="@id/reTweet"
            app:srcCompat="@drawable/ic_vector_heart_stroke" />
+
+       <TextView
+           android:id="@+id/numberOfLikes"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="15dp"
+           android:layout_toEndOf="@id/likeTweet"
+           android:text="113" />
 
        <ImageView
            android:id="@+id/shareTweet"
