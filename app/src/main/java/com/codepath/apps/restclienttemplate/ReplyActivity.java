@@ -39,10 +39,10 @@ public class ReplyActivity extends AppCompatActivity {
 
         client = TwitterApp.getRestClient(this);
 
-        etCompose = findViewById(R.id.etCompose);
-        btnTweet = findViewById(R.id.btnTweet);
+        etCompose = findViewById(R.id.etComposereply);
+        btnTweet = findViewById(R.id.btnTweetreply);
 
-        etCompose.setText("@Test");
+        etCompose.setText(getIntent().getStringExtra(TimelineActivity.KEY_USER_NAME));
 
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);
