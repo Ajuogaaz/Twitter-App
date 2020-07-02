@@ -43,13 +43,6 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-<RelativeLayout
-    android:id="@+id/otherContainer"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainer"
@@ -72,5 +65,5 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-</RelativeLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
