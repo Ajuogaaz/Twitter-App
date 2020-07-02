@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:tools="http://schemas.android.com/tools"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimelineActivity">
+    tools:context=".TimelineActivity"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
 
 
-
-    <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
             android:background="@color/twitterblue"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
             app:titleTextColor="@android:color/white">
 
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:padding="0dp"
-            android:layout_marginStart="0dp"
-            android:contentDescription="@string/tltl"
-            app:srcCompat="@drawable/ic_launcher_twitter_round" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:padding="0dp"
+                android:layout_marginStart="0dp"
+                android:contentDescription="@string/tltl"
+                app:srcCompat="@drawable/ic_launcher_twitter_round" />
 
 
-    </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+<RelativeLayout
+    android:id="@+id/otherContainer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:layout_below="@id/toolbar"
         android:id="@+id/swipeContainer"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTweets"
@@ -45,9 +66,11 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_alignParentStart="true"
+
             android:layout_alignParentTop="true" />
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
