@@ -11,7 +11,8 @@ import java.util.List;
 public  interface TweetDao {
 
     //Combine the tweets with User factoring in the fact that you prepended some data
-    @Query("SELECT Tweet.body AS tweet_body, Tweet.createdAt AS tweet_createdAt, Tweet.Id AS tweet_id , User.*" +
+    @Query("SELECT Tweet.body AS tweet_body, Tweet.createdAt AS tweet_createdAt, Tweet.Id AS tweet_id , Tweet.retweetCount AS tweet_retweetCount, " +
+            " Tweet.likeCount AS tweet_likeCount, User.*" +
             "FROM Tweet INNER JOIN User ON  Tweet.userId = User.id ORDER BY createdAt DESC LIMIT 5")
     List<TweetWithUser> recentItems();
 
