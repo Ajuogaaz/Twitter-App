@@ -32,7 +32,8 @@ public class DetailsActivity extends AppCompatActivity {
                 .load(tweet.user.profileImageUrl)
                 .into(binding.ivProfileImage);
 
-
+        binding.tvName.setText(tweet.user.name);
+        inding
 
 
     }
