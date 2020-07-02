@@ -115,6 +115,14 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
 
 
             tvScreenName.setText(tweet.user.name);
+            tvScreenName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
+                }
+            });
+
+
             createdAt.setText(tweet.createdAt);
 
 
