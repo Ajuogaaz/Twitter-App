@@ -98,6 +98,7 @@
         android:layout_height="1dp"
         android:layout_below="@id/ContainerTweet"
         android:layout_marginTop="10dp"
+        android:visibility="invisible"
         android:background="#c0c0c0"/>
 
    <RelativeLayout
