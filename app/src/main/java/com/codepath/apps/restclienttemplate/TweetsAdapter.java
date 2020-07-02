@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -81,6 +82,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         TextView createdAt;
         ImageView tweetMedia;
         ImageView replyTweet;
+        CardView imageContainer;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -91,6 +93,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             createdAt = itemView.findViewById(R.id.createdAt);
             tweetMedia = itemView.findViewById(R.id.tweetPicture);
             replyTweet = itemView.findViewById(R.id.replyTweet);
+            imageContainer = itemView.findViewById(R.id.roundedContainer);
 
         }
 
