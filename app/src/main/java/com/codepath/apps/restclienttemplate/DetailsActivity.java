@@ -64,6 +64,24 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
 
+        binding.nameOfActualRetweets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                client.retweetTweet(tweet.id, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Headers headers, JSON json) {
+                        Log.i("DetailsActivity", "Onsuccess to like tweet");
+
+                    }
+                    @Override
+                    public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
+                        Log.e("DetailsActivity", response, throwable);
+                    }
+                });
+            }
+        });
+
+
 
 
         Glide.with(this)
