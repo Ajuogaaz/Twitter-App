@@ -122,6 +122,16 @@ public class TimelineActivity extends AppCompatActivity {
                     startActivity(intent);
 
 
+                }if(replyCode == TweetsAdapter.RETWEET_CODE) {
+
+                    Toast.makeText(getApplicationContext(), "Retweeted",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                if(replyCode == TweetsAdapter.LIKE_CODE) {
+
+                    Toast.makeText(getApplicationContext(), "Liked",
+                            Toast.LENGTH_SHORT).show();
                 }
 
 
