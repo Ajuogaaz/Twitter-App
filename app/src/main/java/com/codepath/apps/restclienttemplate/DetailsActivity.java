@@ -46,13 +46,14 @@ public class DetailsActivity extends AppCompatActivity {
         binding.numberOfActualRetweets.setText(tweet.retweetCount);
 
 
-        binding.nameOfActualLikes.setOnClickListener(new View.OnClickListener() {
+        binding.likeTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 client.likeThisTweet(tweet.id, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, JSON json) {
                         Log.i("DetailsActivity", "Onsuccess to like tweet");
+                        changelikelook();
 
                     }
                     @Override
@@ -64,7 +65,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
 
-        binding.nameOfActualRetweets.setOnClickListener(new View.OnClickListener() {
+        binding.reTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 client.retweetTweet(tweet.id, new JsonHttpResponseHandler() {
@@ -98,5 +99,11 @@ public class DetailsActivity extends AppCompatActivity {
             binding.roundedContainer.setVisibility(View.GONE);
         }
 
+    }
+
+    private void changelikelook() {
+
+        Glide.with(this)
+                .load(this.getResources().getDrawable())
     }
 }
