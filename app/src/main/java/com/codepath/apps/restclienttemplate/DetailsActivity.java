@@ -37,6 +37,7 @@ public class DetailsActivity extends AppCompatActivity {
         binding.createdAt.setText(tweet.createdAt);
         binding.tvBody.setText(tweet.body);
         binding.nameOfActualLikes.setText(tweet.likeCount);
+        binding.numberOfActualRetweets.setText(tweet.retweetCount);
 
         Glide.with(this)
                 .load(tweet.media_url)
