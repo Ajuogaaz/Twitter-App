@@ -40,7 +40,7 @@
             android:background="#FFFFFF"
             android:ems="10"
             android:gravity="top"
-            android:hint="@string/what_s_happening"
+            android:hint="@string/reply_the_tweet"
             android:textColor="@color/twitterblue"
             android:inputType="textLongMessage" />
     </com.google.android.material.textfield.TextInputLayout>
