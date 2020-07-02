@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.databinding.ActivityDetailsBinding;
 import com.codepath.apps.restclienttemplate.databinding.ActivityTimelineBinding;
 import com.codepath.apps.restclienttemplate.models.Tweet;
@@ -26,6 +27,12 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(view);
 
         tweet = Parcels.unwrap(getIntent().getParcelableExtra(Tweet.class.getSimpleName()));
+
+        Glide.with(this)
+                .load(tweet.user.profileImageUrl)
+                .into(binding.ivProfileImage);
+
+
 
 
     }
