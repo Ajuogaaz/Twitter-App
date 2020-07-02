@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -105,6 +106,14 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
         public void bind(Tweet tweet) {
 
             tvBody.setText(tweet.body);
+            tvBody.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                   clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
+                }
+            });
+
+
             tvScreenName.setText(tweet.user.name);
             createdAt.setText(tweet.createdAt);
 
