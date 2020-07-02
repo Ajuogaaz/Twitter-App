@@ -27,6 +27,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
     Context context;
     List<Tweet> tweets;
     onClickListener clickListener;
+    public static final int REPLY_CODE = 100;
 
     // Pass in context and list of tweets
 
@@ -127,7 +128,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             replyTweet.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition());
+                    clickListener.onItemClicked(getAdapterPosition(), );
                 }
             });
 
