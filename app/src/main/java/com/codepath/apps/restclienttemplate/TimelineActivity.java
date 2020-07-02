@@ -106,6 +106,7 @@ public class TimelineActivity extends AppCompatActivity {
 
                 intent.putExtra(KEY_USER_NAME, tweets.get(position).user.screenName);
 
+                startActivityForResult(intent, REQUEST_CODE);
 
             }
         };
