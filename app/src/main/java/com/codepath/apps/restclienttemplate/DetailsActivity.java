@@ -37,6 +37,11 @@ public class DetailsActivity extends AppCompatActivity {
         binding.createdAt.setText(tweet.createdAt);
         binding.tvBody.setText(tweet.body);
 
+        Glide.with(this)
+                .load(tweet.media_url)
+                .into(binding.tweetPicture);
+
+
 
 
     }
