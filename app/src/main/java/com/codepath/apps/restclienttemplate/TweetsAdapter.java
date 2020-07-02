@@ -117,7 +117,8 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             });
 
 
-
+            retweetCount.setText(tweet.retweetCount);
+            likeCount.setText(tweet.likeCount);
 
             tvScreenName.setText(tweet.user.name);
             tvScreenName.setOnClickListener(new View.OnClickListener() {
