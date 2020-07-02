@@ -33,7 +33,8 @@ public class DetailsActivity extends AppCompatActivity {
                 .into(binding.ivProfileImage);
 
         binding.tvName.setText(tweet.user.name);
-        inding
+        binding.tvScreenName.setText(tweet.user.screenName);
+
 
 
     }
