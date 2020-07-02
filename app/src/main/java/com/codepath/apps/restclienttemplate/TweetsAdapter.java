@@ -95,12 +95,13 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             replyTweet = itemView.findViewById(R.id.replyTweet);
             imageContainer = itemView.findViewById(R.id.roundedContainer);
 
+
         }
 
         public void bind(Tweet tweet) {
 
             tvBody.setText(tweet.body);
-            tvScreenName.setText(tweet.user.screenName);
+            tvScreenName.setText(tweet.user.name);
             createdAt.setText(tweet.createdAt);
 
 
