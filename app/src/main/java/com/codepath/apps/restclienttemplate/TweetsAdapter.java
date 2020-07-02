@@ -15,6 +15,8 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolder>{
 
     public interface onClickListener{
