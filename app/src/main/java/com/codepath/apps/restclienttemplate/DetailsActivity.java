@@ -51,6 +51,5 @@ public class DetailsActivity extends AppCompatActivity {
             binding.roundedContainer.setVisibility(View.GONE);
         }
 
-
     }
 }
