@@ -110,7 +110,6 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition());
-
                 }
             });
 

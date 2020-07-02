@@ -92,9 +92,21 @@ public class TimelineActivity extends AppCompatActivity {
         //Find the Recycle View
         //rvTweets = findViewById(R.id.rvTweets);
 
+
+        //Innitializing the onclick listener
+        TweetsAdapter.onClickListener onClickListener = new TweetsAdapter.onClickListener() {
+            @Override
+            public void onItemClicked(int position) {
+
+                Toast.makeText(getApplicationContext(), "Reply was clicked",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        };
+
         //Initialize the list of tweets and adapter
         tweets = new ArrayList<>();
-        adapter = new TweetsAdapter(this, tweets);
+        adapter = new TweetsAdapter(this, tweets, onClickListener );
 
         //Recycler view setup: layout manager and the adapter
 
