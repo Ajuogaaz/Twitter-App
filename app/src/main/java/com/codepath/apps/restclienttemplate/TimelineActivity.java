@@ -51,7 +51,7 @@ public class TimelineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // We add the binder method
-        ActivityTimelineBinding binding = ActivityTimelineBinding.inflate(getLayoutInflater());
+        final ActivityTimelineBinding binding = ActivityTimelineBinding.inflate(getLayoutInflater());
 
         View view = binding.getRoot();
         setContentView(view);
