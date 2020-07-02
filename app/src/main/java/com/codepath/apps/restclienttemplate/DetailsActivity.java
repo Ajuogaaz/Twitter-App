@@ -35,6 +35,7 @@ public class DetailsActivity extends AppCompatActivity {
         binding.tvName.setText(tweet.user.name);
         binding.tvScreenName.setText(tweet.user.screenName);
         binding.createdAt.setText(tweet.createdAt);
+        binding.tvBody.setText(tweet.body);
 
 
 
