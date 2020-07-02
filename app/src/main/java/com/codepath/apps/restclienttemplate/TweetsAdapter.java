@@ -16,12 +16,10 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
 
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
-
 public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolder>{
 
     public interface onClickListener{
-        void onItemClicked(int position);
+        void onItemClicked(int position, int replyCode);
     }
 
     Context context;
@@ -128,7 +126,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
             replyTweet.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onItemClicked(getAdapterPosition(), );
+                    clickListener.onItemClicked(getAdapterPosition(), REPLY_CODE);
                 }
             });
 

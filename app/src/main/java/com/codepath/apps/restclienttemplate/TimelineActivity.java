@@ -2,7 +2,6 @@ package com.codepath.apps.restclienttemplate;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -10,13 +9,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.format.Time;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.databinding.ActivityTimelineBinding;
@@ -25,7 +21,6 @@ import com.codepath.apps.restclienttemplate.models.TweetDao;
 import com.codepath.apps.restclienttemplate.models.TweetWithUser;
 import com.codepath.apps.restclienttemplate.models.User;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
-import com.github.scribejava.apis.TwitterApi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -97,16 +92,20 @@ public class TimelineActivity extends AppCompatActivity {
         //Innitializing the onclick listener
         TweetsAdapter.onClickListener onClickListener = new TweetsAdapter.onClickListener() {
             @Override
-            public void onItemClicked(int position) {
+            public void onItemClicked(int position, int replyCode) {
 
-                Toast.makeText(getApplicationContext(), "Replying",
-                        Toast.LENGTH_SHORT).show();
+                if(replyCode == TweetsAdapter.REPLY_CODE) {
 
-                Intent intent = new Intent(TimelineActivity.this, ReplyActivity.class);
+                    Toast.makeText(getApplicationContext(), "Replying",
+                            Toast.LENGTH_SHORT).show();
 
-                intent.putExtra(KEY_USER_NAME, tweets.get(position).user.screenName);
+                    Intent intent = new Intent(TimelineActivity.this, ReplyActivity.class);
 
-                startActivityForResult(intent, REQUEST_CODE);
+                    intent.putExtra(KEY_USER_NAME, tweets.get(position).user.screenName);
+
+                    startActivityForResult(intent, REQUEST_CODE);
+                }
+
 
             }
         };
