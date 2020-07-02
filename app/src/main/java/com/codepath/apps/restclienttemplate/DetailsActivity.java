@@ -36,7 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
         binding.tvScreenName.setText(tweet.user.screenName);
         binding.createdAt.setText(tweet.createdAt);
         binding.tvBody.setText(tweet.body);
-        binding.nameOfActualLikes.setText(tweet.likeCount);
+        binding.numberOfActualLikes.setText(tweet.likeCount);
         binding.numberOfActualRetweets.setText(tweet.retweetCount);
 
         Glide.with(this)
