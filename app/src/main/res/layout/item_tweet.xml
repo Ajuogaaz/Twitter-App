@@ -126,6 +126,7 @@
            android:id="@+id/shareTweet"
            android:layout_width="20dp"
            android:layout_height="40dp"
+           android:textColorLink="@color/twitterblue"
            android:layout_marginStart="60dp"
            android:layout_marginTop="5dp"
            android:layout_toEndOf="@id/likeTweet"

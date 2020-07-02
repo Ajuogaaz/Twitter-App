@@ -1,9 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/twitterblue"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+
+        app:titleTextColor="@android:color/white">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="0dp"
+            android:layout_marginStart="0dp"
+            android:contentDescription="@string/tltl"
+            app:srcCompat="@drawable/ic_launcher_twitter_round" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar1"
+        android:paddingTop="20dp"
+        android:id="@+id/ContainerTweet">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/circularContainer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/circularContainer"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:textSize="15sp"
+            android:paddingTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/Black"
+            tools:text="This is the Name" />
+
+        <TextView
+            android:id="@+id/tvScreenName"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/circularContainer"
+            android:layout_marginStart="5dp"
+            tools:text="This is screen Name" />
+
+
+
+        <TextView
+            android:id="@+id/createdAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            tools:text="9 h" />
+
+        <TextView
+            android:id="@+id/tvBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/circularContainer"
+            android:layout_below="@id/tvScreenName"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:autoLink="all"
+            android:textColor="@color/Black"
+            android:textColorLink="@color/twitterblue"
+            android:textSize="25sp"
+            android:linksClickable="true"
+            tools:text="i am the body" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/roundedContainer"
+            android:layout_below="@id/tvBody"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="10dp"
+            android:layout_width="350dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="50dp"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:id="@+id/tweetPicture"
+                android:layout_width="350dp"
+                android:layout_height="170dp"
+                android:scaleType="centerCrop"
+                android:cropToPadding="true"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ContainerTweet"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/replyTweet"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/vector_compose_dm_shortcut" />
+
+        <ImageView
+            android:id="@+id/reTweet"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/replyTweet"
+            app:srcCompat="@drawable/ic_vector_retweet_stroke" />
+
+        <ImageView
+            android:id="@+id/likeTweet"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/reTweet"
+            app:srcCompat="@drawable/ic_vector_heart_stroke" />
+
+        <ImageView
+            android:id="@+id/shareTweet"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/likeTweet"
+            app:srcCompat="@android:drawable/ic_menu_share" />
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
