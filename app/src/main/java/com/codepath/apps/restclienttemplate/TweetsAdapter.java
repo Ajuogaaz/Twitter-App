@@ -27,6 +27,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
     List<Tweet> tweets;
     onClickListener clickListener;
     public static final int REPLY_CODE = 100;
+    public static final int DETAILS_CODE = 200;
 
     // Pass in context and list of tweets
 
@@ -120,6 +121,13 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                 tweetMedia.setVisibility(View.VISIBLE);
                 imageContainer.setVisibility(View.VISIBLE);
 
+                tweetMedia.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        clickListener.onItemClicked(getAdapterPosition(), DETAILS_CODE);
+                    }
+                });
+
             } else {
                 tweetMedia.setVisibility(View.GONE);
                 imageContainer.setVisibility(View.GONE);
@@ -132,6 +140,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                     clickListener.onItemClicked(getAdapterPosition(), REPLY_CODE);
                 }
             });
+
 
 
 
