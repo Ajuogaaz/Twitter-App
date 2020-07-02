@@ -63,6 +63,8 @@ public class TimelineActivity extends AppCompatActivity {
         tweetDao = ((TwitterApp) getApplicationContext()).getMyDatabase().tweetDao();
 
 
+
+
         // Find the toolbar view inside the activity layout
         //Toolbar toolbar = findViewById(R.id.toolbar);
 
