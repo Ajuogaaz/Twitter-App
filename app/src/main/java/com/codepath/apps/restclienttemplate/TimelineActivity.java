@@ -47,6 +47,7 @@ public class TimelineActivity extends AppCompatActivity {
     EndlessRecycleViewScrollListener scrollListener;
     public final int REQUEST_CODE= 20;
     TweetDao tweetDao;
+    public static final String KEY_USER_NAME = "username";
 
 
 
@@ -98,8 +99,13 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public void onItemClicked(int position) {
 
-                Toast.makeText(getApplicationContext(), "Reply was clicked",
+                Toast.makeText(getApplicationContext(), "Replying",
                         Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(TimelineActivity.this, ReplyActivity.class);
+
+                intent.putExtra(KEY_USER_NAME, tweets.get(position).user.screenName);
+
 
             }
         };

@@ -37,6 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:autofillHints=""
+            android:background="#FFFFFF"
             android:ems="10"
             android:gravity="top"
             android:hint="@string/what_s_happening"
