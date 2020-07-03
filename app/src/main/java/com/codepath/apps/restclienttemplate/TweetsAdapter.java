@@ -126,6 +126,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), RETWEET_CODE);
+                    retweet.setImageResource(R.drawable.ic_vector_retweet);
                 }
             });
 
@@ -134,6 +135,7 @@ public class TweetsAdapter extends  RecyclerView.Adapter<TweetsAdapter.ViewHolde
                 @Override
                 public void onClick(View view) {
                     clickListener.onItemClicked(getAdapterPosition(), LIKE_CODE);
+                    like.setImageResource(R.drawable.ic_vector_heart);
                 }
             });
 
