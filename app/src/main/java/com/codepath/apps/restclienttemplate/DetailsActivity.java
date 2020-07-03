@@ -53,7 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, JSON json) {
                         Log.i("DetailsActivity", "Onsuccess to like tweet");
-                        changelikelook();
+                        binding.likeTweet.setImageResource(R.drawable.ic_vector_heart);
 
                     }
                     @Override
@@ -72,6 +72,7 @@ public class DetailsActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(int statusCode, Headers headers, JSON json) {
                         Log.i("DetailsActivity", "Onsuccess to like tweet");
+                        binding.reTweet.setImageResource(R.drawable.ic_vector_retweet);
 
                     }
                     @Override
@@ -101,9 +102,5 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    private void changelikelook() {
 
-        Glide.with(this)
-                .load()
-    }
 }
