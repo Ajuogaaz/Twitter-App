@@ -91,7 +91,7 @@ public class TimelineActivity extends AppCompatActivity {
         //rvTweets = findViewById(R.id.rvTweets);
 
 
-        //Innitializing the onclick listener
+        //Initializing the onclick listener
         TweetsAdapter.onClickListener onClickListener = new TweetsAdapter.onClickListener() {
             @Override
             public void onItemClicked(int position, int replyCode) {
