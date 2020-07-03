@@ -104,6 +104,6 @@ public class DetailsActivity extends AppCompatActivity {
     private void changelikelook() {
 
         Glide.with(this)
-                .load(this.getResources().getDrawable())
+                .load()
     }
 }

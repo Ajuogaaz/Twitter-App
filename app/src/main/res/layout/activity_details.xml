@@ -223,7 +223,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/replyTweet"
-            app:srcCompat="@drawable/ic_vector_retweet_stroke" />
+            app:srcCompat="@drawable/ic_vector_retweet" />
 
         <ImageView
             android:id="@+id/likeTweet"
